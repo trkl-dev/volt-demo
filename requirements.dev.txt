@@ -1,1 +1,1 @@
-volt-framework[dev]
+volt-framework[dev]==0.1.7
