@@ -3,7 +3,7 @@ import time
 import logging
 from http import HTTPStatus
 
-from volt.router import (
+from volt.router import (  # pyright: ignore[reportMissingTypeStubs]
     Handler,
     HttpRequest,
     HttpResponse,
@@ -273,4 +273,4 @@ def home(_: HttpRequest) -> HttpResponse:
 
 
 if __name__ == "__main__":
-    run_server("0.0.0.0", 8080)
+    run_server()

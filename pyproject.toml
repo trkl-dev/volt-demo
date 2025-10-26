@@ -1,0 +1,13 @@
+[tool.volt]
+log_level = "INFO"
+
+[tool.volt.dev]
+log_level = "DEBUG"
+template_auto_reload = false
+server_address = "127.0.0.1"
+server_port = 1234
+
+[tool.volt.production]
+server_address = "0.0.0.0"
+server_port = 8080
+
