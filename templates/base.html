@@ -32,14 +32,8 @@
                     <h1 class="text-2xl font-bold">Volt</h1>
                 </a>
                 <div class="flex items-center space-x-6">
-                    <a class="cursor-pointer transition-colors {% if selected == 'features' %}text-volt-yellow {% else %}hover:text-volt-yellow{% endif %}"
-                        hx-push-url="true" hx-get="features">Features</a>
                     <a class="cursor-pointer transition-colors {% if selected == 'demo' %}text-volt-yellow {% else %}hover:text-volt-yellow{% endif %}"
                         hx-push-url="true" hx-get="demo" hx-fragment="content">Demo</a>
-                    <a class="cursor-pointer transition-colors {% if selected == 'performance' %}text-volt-yellow{% else %}hover:text-volt-yellow{% endif %}"
-                        hx-push-url="true" hx-get="performance">Performance</a>
-                    <a class="cursor-pointer transition-colors {% if selected == 'quickstart' %}text-volt-yellow{% else %}hover:text-volt-yellow{% endif %}"
-                        hx-push-url="true" hx-get="quickstart">Quick Start</a>
                     <a class="bg-volt-yellow text-black px-6 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition-colors"
                         href="https://github.com/trkl-dev/volt" 
                         target="_blank">GitHub</a>
