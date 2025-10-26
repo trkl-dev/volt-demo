@@ -25,7 +25,7 @@
         id="navbar" 
         hx-select-oob="#navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
+            <div hx-push-url="true" class="flex justify-between items-center py-4">
                 <a class="flex cursor-pointer items-center space-x-3"
                     hx-get="/">
                     <div class="text-3xl animate-lightning">⚡</div>
@@ -33,7 +33,7 @@
                 </a>
                 <div class="flex items-center space-x-6">
                     <a class="cursor-pointer transition-colors {% if selected == 'demo' %}text-volt-yellow {% else %}hover:text-volt-yellow{% endif %}"
-                        hx-push-url="true" hx-get="demo" hx-fragment="content">Demo</a>
+                        hx-get="demo" hx-fragment="content">Demo</a>
                     <a class="bg-volt-yellow text-black px-6 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition-colors"
                         href="https://github.com/trkl-dev/volt" 
                         target="_blank">GitHub</a>
