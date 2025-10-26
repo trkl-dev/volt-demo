@@ -135,13 +135,12 @@
                     Counter
                 </h3>
                 
-                {% block counter %} 
-                <div id="counter" class="text-center" hx-vals='{"value": {{ value }}}'>
-                    <div class="text-5xl font-bold text-volt-yellow mb-6">{{ value }}</div>
+                <div id="counter" class="text-center" hx-vals='js:{value: this.getElementsByClassName("counter-val")[0].innerHTML}'>
+                    <div id="counter-val" class="counter-val text-5xl font-bold text-volt-yellow mb-6">{% block counter %}{{ value }}{% endblock counter %}</div>
                     <div class="flex justify-center gap-3">
                         <button 
                             hx-post="/demo/counter/decrement"
-                            hx-target="#counter"
+                            hx-target="#counter-val"
                             hx-swap="innerHTML"
                             class="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-500 transition-colors cursor-pointer"
                         >
@@ -149,7 +148,7 @@
                         </button>
                         <button 
                             hx-post="/demo/counter/increment"
-                            hx-target="#counter"
+                            hx-target="#counter-val"
                             hx-swap="innerHTML"
                             class="bg-volt-yellow text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors cursor-pointer"
                         >
@@ -158,14 +157,13 @@
                     </div>
                     <button 
                         hx-post="/demo/counter/reset"
-                        hx-target="#counter"
+                        hx-target="#counter-val"
                         hx-swap="innerHTML"
                         class="mt-3 text-gray-400 hover:text-white transition-colors text-sm cursor-pointer"
                     >
                         Reset
                     </button>
                 </div>
-                {% endblock counter %} 
             </div>
 
             <!-- Live Chat Demo -->
