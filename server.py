@@ -53,6 +53,21 @@ def auth(request: HttpRequest, handler: Handler) -> HttpResponse:
     return HttpResponse(body="get outta here!", status=HTTPStatus.FORBIDDEN)
 
 
+@middleware
+def origin(request: HttpRequest, handler: Handler) -> HttpResponse:
+    header_found = False
+    for header in request.headers:
+        if header.name.lower() == "host":
+            header_found = True
+            if header.value == "volt.trkl.dev":
+                return handler(request)
+
+    if not header_found:
+        return HttpResponse(status=HTTPStatus.BAD_REQUEST)
+
+    return HttpResponse(status=HTTPStatus.FORBIDDEN)
+
+
 @route("/", method="GET")
 def root(request: HttpRequest) -> HttpResponse:
     context = Home.Context(
