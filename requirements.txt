@@ -1,0 +1,6 @@
+volt-framework
+jinja2
+uvicorn
+markdown-it-py
+mdit-py-plugins
+pygments
